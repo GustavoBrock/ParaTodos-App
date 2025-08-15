@@ -8,50 +8,45 @@ from datetime import datetime
 
 # O ID da sua planilha, lido do secrets.toml
 SHEET_ID = st.secrets.get("sheet_id", None)
-if not SHEET_ID:
-    st.error("O ID da planilha não foi encontrado. Certifique-se de que ele está no seu arquivo secrets.toml.")
 
 # Variável de cache para evitar múltiplas conexões à planilha
 @st.cache_resource(ttl=300) # O cache será atualizado a cada 5 minutos
 def get_spreadsheets():
-    """Conecta e retorna os objetos Spread para as planilhas."""
+    """Conecta e retorna o objeto Spread para a planilha principal."""
     if not SHEET_ID:
         st.error("O ID da planilha não foi encontrado. Certifique-se de que ele está no seu arquivo secrets.toml.")
         return None
     try:
-        # Tente essa nova abordagem
         # A planilha principal (usada para usuários e histórico)
-        spread = Spread(SHEET_ID)  # Apenas passe o ID, sem o "spreadsheet="
-        # Se você tiver uma planilha separada para histórico, defina-a aqui
-        # historical_spread = Spread('ID_DA_SUA_PLANILHA_DE_HISTORICO')
-        return spread, None
+        spread = Spread(SHEET_ID)
+        return spread
     except Exception as e:
         st.error(f"Erro ao conectar com a planilha do Google Sheets. Verifique o ID e as permissões. Erro: {e}")
-        return None, None
+        return None
 
 def get_users_df():
     """Lê a aba 'users' da planilha e retorna como DataFrame."""
-    spread, _ = get_spreadsheets()
+    spread = get_spreadsheets()
     if spread:
         return spread.sheet_to_df(index=False, sheet='users')
     return pd.DataFrame(columns=['username', 'password', 'profile'])
 
 def update_users_sheet(df):
     """Escreve o DataFrame de volta na aba 'users'."""
-    spread, _ = get_spreadsheets()
+    spread = get_spreadsheets()
     if spread:
         spread.df_to_sheet(df, index=False, start='A1', replace=True, sheet='users')
 
 def get_history_df():
     """Lê a aba 'historico' da planilha e retorna como DataFrame."""
-    spread, _ = get_spreadsheets()
+    spread = get_spreadsheets()
     if spread:
         return spread.sheet_to_df(index=False, sheet='historico')
     return pd.DataFrame(columns=['usuario', 'motorista', 'necessidades', 'status', 'data'])
 
 def update_history_sheet(df):
     """Escreve o DataFrame de volta na aba 'historico'."""
-    spread, _ = get_spreadsheets()
+    spread = get_spreadsheets()
     if spread:
         spread.df_to_sheet(df, index=False, start='A1', replace=True, sheet='historico')
 
@@ -118,7 +113,6 @@ def mostrar_historico():
 
 def mostrar_precos():
     st.subheader("Tabela de Preços")
-    # Sua tabela de preços pode continuar localmente no código
     tabela_precos = pd.DataFrame({
         "Tipo de Veículo": [
             "Carro Padrão", "Carro Compacto Econômico", "Veículo Adaptado com Rampa",
