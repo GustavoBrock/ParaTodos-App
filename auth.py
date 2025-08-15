@@ -62,7 +62,9 @@ def register_page():
                 "Deficiência Visual", 
                 "Deficiência Auditiva", 
                 "Deficiência Intelectual",
-                "Transtorno do espectro autista (TEA)"])
+                "Transtorno do Espectro Autista (TAE)"
+                ])
+            
             submit = st.form_submit_button("Cadastrar")
             if submit:
                 if not username or not password:

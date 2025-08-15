@@ -1,6 +1,5 @@
 streamlit==1.43.1
 bcrypt==4.3.0
 pandas==2.2.3
-gspread-pandas==3.3.0
 folium==0.20.0
 streamlit-folium==0.25.0

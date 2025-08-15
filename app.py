@@ -16,7 +16,7 @@
 
 import streamlit as st
 from auth import login_page, register_page, load_session
-# from db import init_db
+from db import init_db
 from motoristas import pagina_home
 from mapa import pagina_mapa
 from utils import carregar_tema
@@ -24,7 +24,7 @@ import pandas as pd
 
 st.set_page_config(page_title="ParaTodos - Match PCD", layout="wide")
 carregar_tema()
-# init_db()
+init_db()
 load_session()
 
 menu_login = st.sidebar.selectbox("Acesso", ["Login", "Cadastro"])
