@@ -7,19 +7,28 @@ import json # ADICIONE ESTE IMPORT
 import os # ADICIONE ESTE IMPORT
 from datetime import datetime
 
-# --- NOVO BLOCO DE CÓDIGO A SER ADICIONADO ---
-# Se a chave gspread existir, criamos o arquivo de credenciais
-if 'gspread' in st.secrets:
+
+# --- Bloco de código para autenticação ---
+# Acessa a seção 'gspread' do secrets.toml
+creds_content = st.secrets.get("gspread")
+
+# Verifica se a seção existe e se é do tipo esperado
+if creds_content and hasattr(creds_content, 'to_dict'):
+    # Converte o SecretDict para um dicionário Python padrão
+    creds_dict = creds_content.to_dict()
+
+    # Cria o diretório de configuração se ele não existir
     gspread_dir = os.path.join(os.path.expanduser("~"), ".config", "gspread_pandas")
     os.makedirs(gspread_dir, exist_ok=True)
+
+    # Cria e salva o arquivo de credenciais JSON
     creds_path = os.path.join(gspread_dir, "google_secret.json")
-    
     with open(creds_path, "w") as f:
-        # Pega o conteúdo da seção 'gspread'
-        creds_content = st.secrets["gspread"]
-        # Escreve o conteúdo no arquivo JSON
-        json.dump(creds_content, f)
-# --- FIM DO NOVO BLOCO ---
+        json.dump(creds_dict, f)
+else:
+    st.error("Chave 'gspread' não encontrada ou está em formato incorreto nos segredos. Certifique-se de que a configuração está correta no secrets.toml.")
+
+# ... restante do seu código ...
 
 # O ID da sua planilha, lido do secrets.toml
 SHEET_ID = st.secrets.get("sheet_id", None)
