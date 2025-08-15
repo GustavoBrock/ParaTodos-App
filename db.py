@@ -1,13 +1,28 @@
-# db.py - Banco de dados com Google Sheets
-
+# db.py
 import streamlit as st
 import pandas as pd
 from gspread_pandas import Spread
 import io
+import json # ADICIONE ESTE IMPORT
+import os # ADICIONE ESTE IMPORT
 from datetime import datetime
 
+# --- NOVO BLOCO DE CÓDIGO A SER ADICIONADO ---
+# Se a chave gspread existir, criamos o arquivo de credenciais
+if 'gspread' in st.secrets:
+    gspread_dir = os.path.join(os.path.expanduser("~"), ".config", "gspread_pandas")
+    os.makedirs(gspread_dir, exist_ok=True)
+    creds_path = os.path.join(gspread_dir, "google_secret.json")
+    
+    with open(creds_path, "w") as f:
+        # Pega o conteúdo da seção 'gspread'
+        creds_content = st.secrets["gspread"]
+        # Escreve o conteúdo no arquivo JSON
+        json.dump(creds_content, f)
+# --- FIM DO NOVO BLOCO ---
+
 # O ID da sua planilha, lido do secrets.toml
-SHEET_ID = "1BEfAbs6KkT7tlPZlHL9iqZob5Nz_fyHQz2KgDp2r0Sk"
+SHEET_ID = st.secrets.get("sheet_id", None)
 
 # Variável de cache para evitar múltiplas conexões à planilha
 @st.cache_resource(ttl=300) # O cache será atualizado a cada 5 minutos
