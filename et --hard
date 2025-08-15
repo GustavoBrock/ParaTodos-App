@@ -1,0 +1,131 @@
+[33mcommit 63fdf4980b326e48b8fd74e4e85e6c61bddd378f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 11:01:31 2025 -0300
+
+    att_db
+
+[33mcommit b5f7668d2d1962631c74ccc33acdbf8c92d337a4[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 10:42:47 2025 -0300
+
+    att_db
+
+[33mcommit 26ed627cea1d526b815dcd9bb8d2c85709ae511f[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 10:17:10 2025 -0300
+
+    att_db
+
+[33mcommit d36b4a5501b02ec23d3a51a37ef47a3a2be02dda[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 09:38:41 2025 -0300
+
+    RESET.INITIAL
+
+[33mcommit ba5a3d8e0ce30b359d32abf8241923d32a6a7ef7[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 09:36:28 2025 -0300
+
+    atualizandoDB9
+
+[33mcommit 73f70365c96a83dd8a6668b5d2f3b94fa824e780[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 09:34:36 2025 -0300
+
+    atualizandoDB8
+
+[33mcommit c930ec2ee2ff16105fd003360f254ecdf4337d8b[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 09:29:39 2025 -0300
+
+    atualizandoDB8
+
+[33mcommit 92cadb736c0bca872a290f9e41d0d735f6d344f6[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 09:14:34 2025 -0300
+
+    atualizandoDB7
+
+[33mcommit b596edd8c53798fe2eb34ab76e48d1bf59b8506f[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 09:04:19 2025 -0300
+
+    atualizandoDB6
+
+[33mcommit 9a401fb7d84db67a2f43aa29dc3b2a1d4e21c8f8[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 08:52:23 2025 -0300
+
+    atualizandoDB5
+
+[33mcommit 57d03bbf19ba3df9c0e3d5dd0068e594863c496d[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 08:45:48 2025 -0300
+
+    atualizandoDB4
+
+[33mcommit 683b1623025727b7efdcc5a0cdc0296476d499cb[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 08:36:01 2025 -0300
+
+    atualizandoDB3
+
+[33mcommit 332cff527c13dbbdb3ee3644025fd8b6f9f5ac72[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 08:04:21 2025 -0300
+
+    atualizandoDB2
+
+[33mcommit 7d711821a9f08dfcf414917bd00d331bd85af01d[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 08:00:41 2025 -0300
+
+    atualizandoDB
+
+[33mcommit 6373ed6f225ed0b17021e183ecb1885f602aa634[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 07:56:23 2025 -0300
+
+    atualizando init
+
+[33mcommit 211dc6704d5885584d77cf4637763ba0c7763636[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 07:51:51 2025 -0300
+
+    atualizando secrets
+
+[33mcommit 0112dc3de568d811e57b9899d14a82e50507111f[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 07:38:09 2025 -0300
+
+    atualizando requirements2
+
+[33mcommit 1312a51741aad37dab26de070ab7c82e22f5a468[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 07:02:55 2025 -0300
+
+    atualizando requirements
+
+[33mcommit 7e913b9475ae3c29dc902baf9b1161fad5a83970[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 06:37:15 2025 -0300
+
+    removing_sql-lite
+
+[33mcommit ae57367e6faec82af983fde54687ee0247d5f2a2[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 06:27:28 2025 -0300
+
+    Adicionando o README
+
+[33mcommit d5fd03d44d23a922f22dd3a357b936542fccaff2[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 06:24:29 2025 -0300
+
+    Adicionando o requirements.txt
+
+[33mcommit 7e75748b296f2d53f72732c36ae42192c87e92d2[m
+Author: Gustavo Felipe Brock <brock@weg.net>
+Date:   Fri Aug 15 06:18:15 2025 -0300
+
+    Primeira versão do app ParaTodos Resumo
