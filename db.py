@@ -7,7 +7,7 @@ import io
 from datetime import datetime
 
 # O ID da sua planilha, lido do secrets.toml
-SHEET_ID = st.secrets.get("sheet_id", None)
+SHEET_ID = st.secrets.get("google_sheet.sheet_id", None)
 
 # Variável de cache para evitar múltiplas conexões à planilha
 @st.cache_resource(ttl=300) # O cache será atualizado a cada 5 minutos
