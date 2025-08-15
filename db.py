@@ -6,19 +6,8 @@ from gspread_pandas import Spread
 import io
 from datetime import datetime
 
-# --- Início da seção atualizada para leitura do SHEET_ID ---
-# Tenta ler o ID da planilha do secrets.toml de forma robusta
-SHEET_ID = None
-try:
-    # Tenta ler o ID da planilha se ele estiver na raiz do secrets.toml
-    SHEET_ID = st.secrets.get("sheet_id", None)
-    if not SHEET_ID:
-        # Se não estiver na raiz, tenta ler dentro da seção [google_sheet]
-        SHEET_ID = st.secrets.get("google_sheet", {}).get("sheet_id", None)
-except Exception:
-    # Caso alguma exceção ocorra ao tentar ler, mantém SHEET_ID como None
-    pass
-# --- Fim da seção atualizada ---
+# O ID da sua planilha, lido do secrets.toml
+SHEET_ID = "1BEfAbs6KkT7tlPZlHL9iqZob5Nz_fyHQz2KgDp2r0Sk"
 
 # Variável de cache para evitar múltiplas conexões à planilha
 @st.cache_resource(ttl=300) # O cache será atualizado a cada 5 minutos
