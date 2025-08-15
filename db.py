@@ -16,13 +16,15 @@ if not SHEET_ID:
 def get_spreadsheets():
     """Conecta e retorna os objetos Spread para as planilhas."""
     if not SHEET_ID:
-        return None, None
+        st.error("O ID da planilha não foi encontrado. Certifique-se de que ele está no seu arquivo secrets.toml.")
+        return None
     try:
+        # Tente essa nova abordagem
         # A planilha principal (usada para usuários e histórico)
-        main_spread = Spread(spreadsheet=SHEET_ID)
+        spread = Spread(SHEET_ID)  # Apenas passe o ID, sem o "spreadsheet="
         # Se você tiver uma planilha separada para histórico, defina-a aqui
-        # historical_spread = Spread(spreadsheet='ID_DA_SUA_PLANILHA_DE_HISTORICO')
-        return main_spread, None
+        # historical_spread = Spread('ID_DA_SUA_PLANILHA_DE_HISTORICO')
+        return spread, None
     except Exception as e:
         st.error(f"Erro ao conectar com a planilha do Google Sheets. Verifique o ID e as permissões. Erro: {e}")
         return None, None
